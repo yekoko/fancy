@@ -1,4 +1,7 @@
 @extends('admin.template.layout')
+@section('title')
+Dashboard
+@stop
 @section('content')
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
@@ -518,4 +521,9 @@
     </section>
     <!-- /.content -->
   </div>
+@stop
+
+@section('footer-script')
+<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+<script src="{{ asset('dist/js/pages/dashboard.js') }}"></script>
 @stop
