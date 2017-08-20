@@ -11,11 +11,25 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
-Route::get('admin',function(){
-	 return view('admin.dashboard');
-	 
+
+
+
+
+
+ 
+Route::get('/', 'HomeController@index')->name('home');
+Route::group(['prefix' => 'admin'],function()
+{
+	Auth::routes();
+	Route::group(['middleware' => 'auth'],function(){
+		Route::get('/','Admin\DashboardController@index');
+		Route::resource('role','Admin\RoleController');
+		Route::resource('user','Admin\UserController');
+	});
+	
+
 });
