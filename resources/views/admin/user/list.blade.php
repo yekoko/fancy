@@ -1,6 +1,6 @@
 @extends('admin.template.layout')
 @section('title')
-Dashboard
+User List
 @stop
 @section('content')
   <div class="content-wrapper">
@@ -13,6 +13,9 @@ Dashboard
         <li><a href="#"><i class="fa fa-dashboard"></i>Dashboard</a></li>
         <li><a href="#">User</a></li>
       </ol>
+    </section>
+    <section class="content">
+      
     </section>
     <div class="clearfix"></div>
   </div>

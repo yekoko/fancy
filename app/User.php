@@ -26,4 +26,19 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function roles()
+    {
+        return $this->belongsToMany('App\Models\Role','role_tbl_users');
+    }
+
+    public function inRole($role)
+    {
+        $id = Auth::user()->id;
+        $user =  Models\User::with('roles')->find($id);
+        if($user->roles[0]->name == $role)
+        {
+            return true;
+        }
+    }
 }
